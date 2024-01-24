@@ -16,12 +16,26 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+//    [self testMethod];
+    
+    void (^testBlock)(void);
+    
+    testBlock = ^ {
+        NSLog(@"Test Block!");
+    };
+    
+    testBlock();
+    
     return YES;
 }
 
 
 #pragma mark - UISceneSession lifecycle
 
+- (void) testMethod {
+    NSLog(@"Test Method!");
+}
 
 - (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions *)options {
     // Called when a new scene session is being created.
